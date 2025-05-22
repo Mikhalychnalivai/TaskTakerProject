@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lexend+Giga:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>TaskTaker</title>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+
+    <section class="about" id="about">
+        <div class="header">
+            <h1 class="title">TaskTaker</h1>
+            <div class="menu">
+                <a href="#about">О нас</a>
+                <a href="#main">Задачи</a>
+                <a href="#footer">Контакты</a>
+            </div>
+        </div>
+        <div class="about-content">
+            <h1 class="about-title">TaskTaker</h1>
+            <div class="about-text">
+                <p>Современный сервис для управления задачами любой сложности</p>
+                <p>Поможем организовать вашу работу на высшем пилотаже!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основная часть -->
+
+    <section class="main" id="main">
+        <div class="tasks-container">
+
+            <!-- Левый блок - список задач -->
+
+            <div class="tasks-column">
+                <button class="task-list-btn" id="taskListBtn">Список задач</button>
+                <div class="task-panel" id="taskPanel">
+                    <div class="tags-filter">
+                        <h4>Фильтр по тегам:</h4>
+                        <div class="tags-cloud" id="tagsCloud"></div>
+                        <button id="resetFilterBtn" class="reset-filter-btn">Сбросить фильтр</button>
+                    </div>
+                    <ul id="tasks">
+                        <!-- Здесь отображаются задачи -->
+                    </ul>
+                    <div class="add-task-btn-container">
+                        <button class="task-add-btn" id="addTaskBtn">Добавить задачу</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Правый блок - информация о задаче -->
+
+            <div class="task-info" id="task-info">
+                <div class="task-info-content">
+                    <div class="no-task-selected">
+                        <p>Выберите задачу из списка</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Модальное окно для создания задачи -->
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="task-form-modal">
+            <h3>Создание новой задачи</h3>
+            <input type="text" id="newTaskName" placeholder="Название задачи">
+            <textarea id="taskDescription" placeholder="Описание задачи"></textarea>
+            <div class="tags-input-container">
+                <input type="text" id="taskTags" placeholder="Добавьте теги (через запятую)">
+            </div>
+            <div class="file-upload">
+                <label for="taskFile">Прикрепить файл</label>
+                <input type="file" id="taskFile">
+            </div>
+            <div class="form-buttons">
+                <button id="createTaskBtn">Создать</button>
+                <button id="cancelTaskBtn">Отмена</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для просмотра файлов -->
+
+    <div class="file-viewer-modal" id="fileViewerModal">
+        <div class="file-viewer-content">
+            <span class="close-file-viewer">&times;</span>
+            <iframe id="fileViewerFrame" frameborder="0"></iframe>
+            <div class="file-actions">
+                <a id="downloadFileBtn" class="file-action-btn">Скачать</a>
+                <button id="closeFileBtn" class="file-action-btn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контакты -->
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Контакты</h3>
+                <div class="contact-info">
+                    <div class="contact-item"> 
+                        <a href="mailto:email@gmail.com" class="contact-link">blablabla@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+71234567890" class="contact-link">+7 (123) 456-78-90</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 TaskTaker.</p>
+            </div>
+        </div>
+    </footer>
+
+     <script src="src/app/app.js"></script>
+</body>
+</html>
